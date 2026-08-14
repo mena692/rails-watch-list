@@ -1,6 +1,14 @@
 <div class="container mt-4">
   <h1><%= @list.name %></h1>
 
+  <% if @list.photo.attached? %>
+  <%= cl_image_tag @list.photo.key,
+                   height: 400,
+                   width: 800,
+                   crop: :fill,
+                   class: "mb-4" %>
+<% end %>
+
   <div class="row">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-12 col-md-6 col-lg-4 mb-4">
