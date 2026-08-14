@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h1 class="mb-4">My Watchlists</h1>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+        <div class="card-category bg-dark">
+          <%= list.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
